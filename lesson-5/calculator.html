@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let userInput = " ";
+        function showUserInput(){
+            console.log(`${userInput}`);
+        }
+    </script>
+    <p>Calculator</p>
+    <div>
+    <button onclick="userInput+=1;showUserInput()">1</button>
+    <button onclick="userInput+=2;showUserInput()">2</button>
+    <button onclick="userInput+=3;showUserInput()">3</button>
+    <button onclick="userInput+='+';showUserInput()">+</button>
+    </div>
+    <div>
+    <button onclick="userInput+=4;showUserInput()">4</button>
+    <button onclick="userInput+=5;showUserInput()">5</button>
+    <button onclick="userInput+=6;showUserInput()">6</button>
+    <button onclick="userInput= userInput+'-';showUserInput()">-</button>
+    </div>
+    <div>
+    <button onclick="userInput+=7;showUserInput()">7</button>
+    <button onclick="userInput+=8;showUserInput()">8</button>
+    <button onclick="userInput+=9;showUserInput()">9</button>
+    <button onclick="userInput+='*';showUserInput()">*</button>
+    </div>
+    <div>
+    <button onclick="userInput+=0;showUserInput()">0</button>
+    <button onclick="userInput+='.';showUserInput()">.</button>
+    <button onclick="console.log(Number(userInput));">=</button>
+    <button onclick="userInput+='/';showUserInput()">/</button>
+    </div>
+    <button onclick="userInput=''">clear</button>
+
+</body>
+</html>
+
+<!-- 
+int firstnumber
+int secondnumber
+int operator
+
+
+-->

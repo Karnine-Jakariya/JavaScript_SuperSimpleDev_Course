@@ -13,6 +13,11 @@
     <button onclick="cartQuantity += 2; showQuantity();">+2</button>
     <button onclick="cartQuantity += 3; showQuantity();">+3</button>
     <button onclick="cartQuantity = 0; showQuantity();">Reset Cart</button>
+    <button onclick="cartQuantity+=4;showQuantity();">+4</button>
+    <button onclick="cartQuantity+=5;showQuantity();">+5</button>
+    <button onclick="cartQuantity--;showQuantity();">Remove from cart</button>
+    <button onclick="cartQuantity-=2;showQuantity();">Remove 2 from cart</button>
+    <button onclick="cartQuantity-=3;showQuantity();">Remove 3 from cart</button>
     <script>
         let cartQuantity = 0; // Initialize cart quantity
         showQuantity = () => {
