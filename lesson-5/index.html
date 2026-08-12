@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variables</title>
+</head>
+<body>
+    <!--Creating Buttons for actions-->
+    <p>Cart Quantity:</p>
+    <button onclick="showQuantity()">Show Quantity</button>
+    <button onclick="cartQuantity++; showQuantity();">Add to cart</button>
+    <button onclick="cartQuantity += 2; showQuantity();">+2</button>
+    <button onclick="cartQuantity += 3; showQuantity();">+3</button>
+    <button onclick="cartQuantity = 0; showQuantity();">Reset Cart</button>
+    <script>
+        let cartQuantity = 0; // Initialize cart quantity
+        showQuantity = () => {
+            console.log(`Cart Quantity: ${cartQuantity}`);
+        }
+    </script>
+</body>
+</html>
