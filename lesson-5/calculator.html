@@ -34,18 +34,10 @@
     <div>
     <button onclick="userInput+=0;showUserInput()">0</button>
     <button onclick="userInput+='.';showUserInput()">.</button>
-    <button onclick="console.log(Number(userInput));">=</button>
+    <button onclick="console.log(eval(userInput));userInput=eval(userInput);">=</button>
     <button onclick="userInput+='/';showUserInput()">/</button>
     </div>
-    <button onclick="userInput=''">clear</button>
+    <button onclick="userInput='';console.log('All numbers cleared')">clear</button>
 
 </body>
 </html>
-
-<!-- 
-int firstnumber
-int secondnumber
-int operator
-
-
--->
