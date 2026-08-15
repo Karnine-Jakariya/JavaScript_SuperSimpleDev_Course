@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practices</title>
+</head>
+<body>
+    <p>YouTube Subscribe Button</p>
+    <button class='js-button' onclick="Subscribe();">Subscribe</button>
+    
+
+    <p>Rock Paper Scissors game</p>
+    <a href="RPS.html">Click Here</a>
+
+    <p>Amazon Shipping Calculator</p>
+    <p>Orders under $40 = +$10 shipping.</p>
+    <p>Orders over $40 = FREE shipping.</p>
+    <input class = 'js-input' type='number' placeholder='Cost of Order'>
+    <button onclick="calculate()">calculate</button>
+    <!--this will output result -->
+    <p class="js-result">Result:</p>
+
+
+
+    <script>
+        const textOfButton = document.getElementsByClassName('js-button')[0];
+        function Subscribe(){
+            if (textOfButton.innerHTML==='Subscribe'){
+                textOfButton.innerHTML='Subscribed';
+            }
+            else {textOfButton.innerHTML="Subscribe";
+            }}
+        function calculate(){
+            const value = document.getElementsByClassName('js-input')[0].value;
+            if(value <= 0){
+                alert("Enter positive number")
+            }
+            else if( value < 40){
+                document.getElementsByClassName('js-result')[0].innerHTML=`Result: $${Number(value)+10}`;
+            }
+            else{
+                document.getElementsByClassName('js-result')[0].innerHTML=`Result: $${Number(value)}`;
+            }
+        }
+    </script>
+</body>
+</html>

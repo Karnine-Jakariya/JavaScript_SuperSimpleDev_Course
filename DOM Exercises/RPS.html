@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors Game</title>
+</head>
+<body>
+    <p>Rock Paper Scissors</p>
+    <button onclick="
+        pickMove();
+        humanMove='rock';
+        updateResult();
+        displayResults()
+    ">Rock</button>
+    <button onclick="
+        pickMove();
+        humanMove='paper';
+        updateResult();
+        displayResults();
+    ">Paper</button>
+    <button onclick="
+        pickMove();
+        humanMove='scissors';
+        updateResult();
+        displayResults();
+    ">Scissors</button>
+
+    <script>
+        let computerMove = '';
+        let humanMove = '';
+        let score = JSON.parse(localStorage.getItem("score"));
+        if (score === null){
+            score = {
+            wins: 0,
+            losses: 0,
+            ties: 0
+        }
+        } 
+        function pickMove(){
+            let randomNumber= Math.random();
+            if (randomNumber<0.33){computerMove='paper';}
+            else if (randomNumber<0.66){computerMove='rock';}
+            else computerMove = 'scissors';
+        }
+        // Main logic
+        function updateResult(){
+            if (humanMove==='rock'&& computerMove==='rock'){score.ties++; return}
+            else if (humanMove==='rock'&& computerMove==='paper'){score.losses++; return}
+            else if (humanMove==='rock'){score.wins++; return}
+            else if (humanMove==='paper'&& computerMove==='rock'){score.wins++; return}
+            else if (humanMove==='paper'&& computerMove==='paper'){score.ties++; return}
+            else if (humanMove==='paper'){score.losses++;return}
+            else if (computerMove==='scissors'){score.ties++; return}
+            else if (computerMove==='rock'){score.losses++; return}
+            else score.wins++
+        }
+        function displayResults(){
+            console.log(`Wins: ${score.wins}
+Losses: ${score.losses}
+Ties: ${score.ties}`)
+localStorage.setItem("score", JSON.stringify(score))
+        }
+    </script>
+</body>
+</html>
